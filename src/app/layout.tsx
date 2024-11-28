@@ -23,12 +23,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  function cn(...classes: (string | undefined)[]): string {
+    return classes.filter(Boolean).join(" ");
+  }
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={cn(
+          "relative font-sans antialiased h-full",
+          geistSans.variable
+        )}
       >
-        {children}
+        <main className="flex flex-col min-h-screen">
+          <div className="flex-grow flex-1">{children}</div>
+        </main>
       </body>
     </html>
   );
