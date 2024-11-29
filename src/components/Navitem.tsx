@@ -13,14 +13,14 @@ interface NavitemProps {
   close: () => void;
   handleopen: () => void;
   isOpen: boolean;
-  isAnyopen: boolean;
+  isAnyOpen: boolean;
 }
 
 const Navitem = ({
   category,
   close,
   isOpen,
-  isAnyopen,
+  isAnyOpen,
   handleopen,
 }: NavitemProps) => {
   return (
@@ -45,7 +45,7 @@ const Navitem = ({
           className={cn(
             "absolute inset-x-0 top-full text-sm text-muted-foreground",
             {
-              "animate-in fade-in-10 slide-in-from-top-5": !isAnyopen,
+              "animate-in fade-in-10 slide-in-from-top-5": !isAnyOpen,
             }
           )}
         >
