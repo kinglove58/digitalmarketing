@@ -21,13 +21,14 @@ const Navitems = () => {
           setActiveIndex(null);
         };
 
-        const isopen = i === activeIndex;
+        const isOpen = i === activeIndex;
         return (
           <Navitem
             category={category}
             close={close}
-            isopen={isopen}
+            isOpen={isOpen}
             handleopen={handleopen}
+            // isAnyopen={isAnyopen}
             key={i}
           />
         );
