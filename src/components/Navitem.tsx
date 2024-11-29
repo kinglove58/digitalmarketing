@@ -3,6 +3,8 @@ import { PRODUCT_CATEGORIES } from "@/config";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
 
 type category = (typeof PRODUCT_CATEGORIES)[number];
 
@@ -54,7 +56,33 @@ const Navitem = ({
           <div className="relative bg-white">
             <div className="mx-auto max-w-7xl px-8">
               <div className="grid grid-cols-4 gap-x-8 gap-y-10 py-16">
-                <div className="col-span-4 col-start-1"></div>
+                <div className="col-span-4 col-start-1 grid-cols-3 grid gap-x-8">
+                  {category.featured.map((item) => (
+                    <div
+                      onClick={() => close}
+                      key={item.name}
+                      className="group text-base sm:text-sm"
+                    >
+                      <div className="relative group-hover:opacity-75 aspect-video overflow-hidden rounded-lg bg-gray-100 ">
+                        <Image
+                          src={item.imageSrc}
+                          alt="product image icons"
+                          fill
+                          className="object-cover object-center"
+                        />
+                      </div>
+                      <Link
+                        href={item.href}
+                        className="mt-6 block font-medium text-gray-600"
+                      >
+                        {item.name}
+                      </Link>
+                      <p className="mt-1" aria-hidden="true">
+                        Shop now
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
