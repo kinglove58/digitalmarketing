@@ -6,7 +6,7 @@ import Navitems from "./Navitems";
 
 const Navbar = () => {
   return (
-    <div className="bg-white sticky h-16 inset-x-0 z-50">
+    <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
       <div className="relative bg-white">
         <Maxwithwrapper>
           <div className="border-b border-gray-200">
@@ -17,7 +17,7 @@ const Navbar = () => {
                   <Icons.logo className="h-10 w-10" />
                 </Link>
               </div>
-              <div className="hidden lg:block z-50 lg:ml-8 lg:self-stretch">
+              <div className="hidden z-50 lg:ml-8 lg:block lg:self-stretch">
                 <Navitems />
               </div>
             </div>

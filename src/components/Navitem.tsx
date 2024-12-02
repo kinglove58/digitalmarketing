@@ -25,7 +25,7 @@ const Navitem = ({
 }: NavitemProps) => {
   return (
     <div className="flex">
-      <div className="relative items-center">
+      <div className="relative flex items-center">
         <Button
           className="gap-1.5"
           onClick={handleopen}
